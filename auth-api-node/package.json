@@ -1,14 +1,16 @@
 {
   "name": "auth-api-node",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Authentication API with JWT using Node.js, Express, and TypeScript",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["nodejs", "express", "typescript", "authentication", "jwt"],
+  "author": "Nayderson",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^16.5.0",
