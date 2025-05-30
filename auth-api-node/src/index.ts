@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import authRoutes from './routes/auth';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI as string)
   .catch((error) => {
     console.error('Erro ao conectar ao MongoDB:', error.message);
   });
+app.use('/api', authRoutes);
 
 app.get('/', (req, res) => {
   res.send('API de autenticação');
